@@ -1,6 +1,7 @@
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project uses the TMDB API but is not endorsed or certified by TMDB.
+It is for educational and non-commercial use only.
 
 Currently, two official plugins are available:
 
