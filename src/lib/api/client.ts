@@ -1,7 +1,7 @@
 import axios, { type AxiosInstance, type AxiosRequestConfig } from "axios";
 
-var BASE_URL = "";
-var API_KEY = "";
+var BASE_URL = "https://api.themoviedb.org/3/";
+var API_KEY = import.meta.env.VITE_TMDB_API_KEY;
 
 class ApiClient {
   private client: AxiosInstance;
@@ -13,9 +13,9 @@ class ApiClient {
         api_key: API_KEY,
       },
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${API_KEY}`
       },
-
     });
 
     this.setupInterceptors()
