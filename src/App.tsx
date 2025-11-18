@@ -6,7 +6,7 @@ function App() {
   useEffect(() => {
     const fetchPopularMovies = async () => {
       try {
-        const data = await tmdbApi.getPopularMovies(1)
+        const data = await tmdbApi.getOnThearersMovies()
         console.log(data)
       }
       catch (error) {
