@@ -1,5 +1,6 @@
 import { useEffect } from "react"
 import { tmdbApi } from "./lib/api/tmdb.api"
+import { SummaryCard } from "./components/SummaryCard"
 
 function App() {
 
@@ -18,9 +19,7 @@ function App() {
 
   return (
     <>
-      <h1 className="underline text-red-200">
-        Hello world!
-      </h1>
+      <SummaryCard />
     </>
   )
 }
