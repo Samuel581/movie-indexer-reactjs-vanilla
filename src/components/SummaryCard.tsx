@@ -1,14 +1,22 @@
-export const SummaryCard = () => {
+import type { BaseCardProps } from "../features/PopularMovies/types/card_base.types"
+import { IMAGE_BASE_URL } from "../types/constants.types"
+export const SummaryCard = (Movie: BaseCardProps) => {
   return (
-    <div className="bg-gray-50 w-96 rounded-lg m-10 transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:cursor-pointer group">
-      <img src="https://www.w3schools.com/html/pic_trulli.jpg" className="w-full h-60 object-cover transition-filter duration-300 ease-in-out group-hover:blur-sm" />
+    <div 
+      className="bg-gray-50 
+      w-96 rounded-lg m-10 transition-transform
+      duration-300 ease-in-out hover:scale-105 
+      hover:shadow-xl hover:cursor-pointer group">
+      <img src={`${IMAGE_BASE_URL}${Movie.backdrop_path}`} 
+        className="w-full h-60 object-cover transition-filter 
+        duration-300 ease-in-out group-hover:blur-sm" />
       <div className="m-5 flex flex-col gap-2">
-        <text className="font-bold">Altered</text>
+        <text className="font-bold">{Movie.original_title}</text>
         <div className="flex flex-row justify-between">
-          <text className="font-bold">6.8/10</text>
-          <text className="text-gray-500">2025</text>
+          <text className="font-bold">{Movie.popularity}/10</text>
+          <text className="text-gray-500">{Movie.release_date}</text>
         </div>
-        <text className="text-sm">In an alternate present, genetically enhanced humans dominate society. Outcasts Leon and Chloe fight for justice against corrupt politicians exploiting genetic disparity, risking everything to challenge the oppressive system.</text>
+        <text className="text-sm line-clamp-4">{Movie.overview}</text>
       </div>
     </div>
   )
