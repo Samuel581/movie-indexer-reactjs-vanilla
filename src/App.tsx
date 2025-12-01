@@ -1,25 +1,11 @@
-import { useEffect } from "react"
-import { tmdbApi } from "./lib/api/tmdb.api"
-import { SummaryCard } from "./components/SummaryCard"
+import { PopularMoviesRow } from "./features/PopularMovies/PopularMoviesRow"
+import OnThearersMovieRow from "./features/OnThearersMovies/OnThearersMovieRow"
 
 function App() {
-
-  useEffect(() => {
-    const fetchPopularMovies = async () => {
-      try {
-        const data = await tmdbApi.getOnThearersMovies()
-        console.log(data)
-      }
-      catch (error) {
-        console.log(error)
-      }
-    }
-    fetchPopularMovies()
-  }, [])
-
   return (
     <>
-      <SummaryCard />
+      <PopularMoviesRow />
+      <OnThearersMovieRow/>
     </>
   )
 }
