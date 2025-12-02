@@ -1,4 +1,4 @@
-import { useFetchOnTheatersMovies } from "./hooks/useFetchPopularMovies";
+import { useFetchOnTheatersMovies } from "./hooks/useFetchOnTheatersMovies";
 import { SummaryCard } from "../../components/SummaryCard";
 
 function OnThearersMovieRow() {
