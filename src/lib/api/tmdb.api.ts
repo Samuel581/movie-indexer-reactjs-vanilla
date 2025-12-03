@@ -12,9 +12,15 @@ export const tmdbApi = {
     })
   },
 
-  // Get movies currently being played in thearers
+  // Get movies currently being played in tearers
   getOnThearersMovies: async (page: number = 1): Promise<PaginatedResponse<Movie>> => {
     return apiClient.get("movie/now_playing", {
+      params: { page }
+    })
+  },
+
+  getUpcomingMovies: async (page: number = 1): Promise<PaginatedResponse<Movie>> => {
+    return apiClient.get("movie/upcoming", {
       params: { page }
     })
   },
