@@ -1,2 +1,7 @@
 import type { Movie } from "../../../types/movie.types";
-export type BaseCardProps = Pick<Movie, "id" | "overview" | "original_title" | "release_date" | "popularity" | "backdrop_path">
+export type BaseCardProps = Pick<Movie,
+    "id" | 
+    "title" | 
+    "release_date" | 
+    "poster_path" | 
+    "vote_average">

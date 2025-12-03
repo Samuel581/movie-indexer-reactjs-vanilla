@@ -13,9 +13,9 @@ export const PopularMoviesRow = () => {
   }
 
   return (
-    <div className="m-1">
+    <div className="m-5">
     <h2 className="font-bold text-3xl text-center">Popular Movies</h2>
-    <div className="flex flex-wrap justify-evenly">
+    <div className="flex flex-wrap">
       {
         movies.length > 0 ? (
           movies.map(movie => {
