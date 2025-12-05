@@ -1,5 +1,5 @@
 import { useFetchOnTheatersMovies } from "./hooks/useFetchOnTheatersMovies";
-import { SummaryCard } from "../../components/SummaryCard";
+import { MoviesRow } from "../../components/MoviesRow";
 
 function OnThearersMovieRow() {
   const { movies, isLoading, error } = useFetchOnTheatersMovies();
@@ -13,18 +13,7 @@ function OnThearersMovieRow() {
   }
 
   return (
-    <div className="m-1">
-      <h2 className="font-bold text-3xl text-center">Currently Playing</h2>
-      <div className="flex flex-wrap justify-evenly">
-        {movies.length > 0 ? (
-          movies.map((movie) => {
-            return <SummaryCard {...movie} />;
-          })
-        ) : (
-          <div>There are no movies to show</div>
-        )}
-      </div>
-    </div>
+    <MoviesRow title="Currently Playing in Theaters" movies={movies} />
   );
 }
 

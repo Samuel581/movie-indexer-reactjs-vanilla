@@ -1,4 +1,4 @@
-import type { Movie } from "../../../types/movie.types";
+import type { Movie } from "./movie.types";
 export type BaseCardProps = Pick<Movie,
     "id" | 
     "title" | 
