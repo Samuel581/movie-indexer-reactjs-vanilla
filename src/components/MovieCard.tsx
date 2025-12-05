@@ -1,7 +1,7 @@
 import { useState } from "react"
-import type { BaseCardProps } from "../features/PopularMovies/types/card_base.types"
+import type { BaseCardProps } from "../types/card_base.types"
 import { IMAGE_BASE_URL } from "../types/constants.types"
-export const SummaryCard = (Movie: BaseCardProps) => {
+export const MovieCard = (Movie: BaseCardProps) => {
 
   const posterUrl = `${IMAGE_BASE_URL}${Movie.poster_path}`
   const rating = Math.round(Movie.vote_average * 10) / 10

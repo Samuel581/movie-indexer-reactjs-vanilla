@@ -1,5 +1,5 @@
 import { useFetchUpcomingMovies } from "./hooks/useFetchUpcomingMovies";
-import { SummaryCard } from "../../components/SummaryCard";
+import { MoviesRow } from "../../components/MoviesRow";
 
 function UpcomingMoviesRow() {
   const { isLoading, movies, error } = useFetchUpcomingMovies();
@@ -13,18 +13,7 @@ function UpcomingMoviesRow() {
   }
 
   return (
-    <div className="m-1">
-        <h2 className="font-bold text-3xl text-center">Upcoming Movies</h2>
-        <div className="flex flex-wrap justify-evenly">
-        {movies.length > 0 ? (
-          movies.map((movie) => {
-            return <SummaryCard {...movie} />;
-          })
-        ) : (
-          <div>There are no movies to show</div>
-        )}
-      </div>
-    </div>
+    <MoviesRow title="Upcoming Movies" movies={movies} />
   )
 }
 

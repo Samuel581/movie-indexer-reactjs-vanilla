@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { tmdbApi } from "../../../lib/api/tmdb.api";
 import type { Movie } from "../../../types/movie.types";
 
-export function useFecthMovies() {
+export function useFecthPopularMovies() {
   const [movies, setMovies] = useState<Movie[]>([])
   const [loading, setLoading] = useState<boolean>(true)
   const [error, setError] = useState<unknown | null>(null)
