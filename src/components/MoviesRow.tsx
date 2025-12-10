@@ -5,7 +5,7 @@ export const MoviesRow = ({ title, movies }: { title: string, movies: Movie[] })
     return (
         <div className="m-5">
             <h2 className="font-bold text-3xl text-center">{title}</h2>
-            <div className="flex flex-wrap">
+            <div className="flex flex-wrap justify-center">
                 {
                     movies.length > 0 ? (
                         movies.map(movie => {
