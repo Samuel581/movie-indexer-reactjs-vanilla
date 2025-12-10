@@ -8,7 +8,7 @@ export const MovieCard = (Movie: BaseCardProps) => {
   const releaseDate = Movie.release_date ? new Date(Movie.release_date).getFullYear() : "N/A"
 
   return (
-    <div className="group cursor-pointer px-2 w-full max-w-[200px]">
+    <div className="group cursor-pointer px-2 w-full max-w-[300px]">
       {/* Poster Image */}
       <div className="relative mb-4 overflow-hidden rounded-lg bg-secondary aspect-[342/513]">
         {/* Track image load error with state */}
