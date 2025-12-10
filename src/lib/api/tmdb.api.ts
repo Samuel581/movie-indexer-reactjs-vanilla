@@ -25,6 +25,12 @@ export const tmdbApi = {
     })
   },
 
+  getTrendingMovies: async (page: number = 1): Promise<PaginatedResponse<Movie>> => {
+    return apiClient.get("trending/movie/week", {
+      params: { page }
+    })
+  },
+
   // Movies details 
   // Details 
   getMovieDetails: async (movie_id: number): Promise<MovieDetails> => {
