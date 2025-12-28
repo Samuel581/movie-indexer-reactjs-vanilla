@@ -1,6 +1,6 @@
 import { useState } from "react";
 import type { BaseCardProps } from "../types/card_base.types";
-import { POSTER_BASE_URL } from "../types/constants.types";
+import { POSTER_BASE_URL } from "../utils/constants.types";
 import { formatRating, formatReleaseDate } from "../utils/movie.utils";
 export const MovieCard = (Movie: BaseCardProps) => {
   const posterUrl = `${POSTER_BASE_URL}${Movie.poster_path}`;
