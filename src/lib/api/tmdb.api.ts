@@ -1,44 +1,51 @@
-import type { Movie, MovieDetails, PaginatedResponse } from "../../types/movie.types";
+import type {
+  Movie,
+  MovieDetails,
+  PaginatedResponse,
+} from "../../types/movie.types";
 import { apiClient } from "./client";
 
-
 export const tmdbApi = {
-
-  // Movies list 
+  // Movies list
   // Get popular movie
-  getPopularMovies: async (page: number = 1): Promise<PaginatedResponse<Movie>> => {
+  getPopularMovies: async (
+    page: number = 1,
+  ): Promise<PaginatedResponse<Movie>> => {
     return apiClient.get("movie/popular", {
-      params: { page }
-    })
+      params: { page },
+    });
   },
 
   // Get movies currently being played in tearers
-  getOnThearersMovies: async (page: number = 1): Promise<PaginatedResponse<Movie>> => {
+  getOnThearersMovies: async (
+    page: number = 1,
+  ): Promise<PaginatedResponse<Movie>> => {
     return apiClient.get("movie/now_playing", {
-      params: { page }
-    })
+      params: { page },
+    });
   },
 
-  getUpcomingMovies: async (page: number = 1): Promise<PaginatedResponse<Movie>> => {
+  getUpcomingMovies: async (
+    page: number = 1,
+  ): Promise<PaginatedResponse<Movie>> => {
     return apiClient.get("movie/upcoming", {
-      params: { page }
-    })
+      params: { page },
+    });
   },
 
-  getTrendingMovies: async (page: number = 1): Promise<PaginatedResponse<Movie>> => {
+  getTrendingMovies: async (
+    page: number = 1,
+  ): Promise<PaginatedResponse<Movie>> => {
     return apiClient.get("trending/movie/week", {
-      params: { page }
-    })
+      params: { page },
+    });
   },
 
-  // Movies details 
-  // Details 
+  // Movies details
+  // Details
   getMovieDetails: async (movie_id: number): Promise<MovieDetails> => {
     return apiClient.get(`movie/${movie_id}`, {
-    })
-  }
-
-
-}
-
-
+      params: { append_to_response: "credits" },
+    });
+  },
+};
