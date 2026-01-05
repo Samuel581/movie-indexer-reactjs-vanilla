@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router";
 import CastCard from "../../components/CastCard";
 
 import type { MovieDetailsProps } from "../../types/movie_details.types";
@@ -8,8 +9,18 @@ import {
 import { formatMoney } from "../../utils/movie.utils";
 
 export default function MovieDetails({ movie }: MovieDetailsProps) {
+  const navigate = useNavigate();
+
   return (
     <div className="w-full bg-slate-950 text-slate-100">
+      {/* Back Button */}
+      <button
+        onClick={() => navigate(-1)}
+        className="fixed left-6 top-6 z-50 flex items-center gap-2 rounded-full bg-black/40 px-4 py-2 text-sm font-medium text-white backdrop-blur-md transition-all hover:bg-black/60 hover:scale-105 active:scale-95"
+      >
+        ← Back
+      </button>
+
       {/* Hero */}
       <section
         className="relative h-[520px] w-full bg-cover bg-center"
