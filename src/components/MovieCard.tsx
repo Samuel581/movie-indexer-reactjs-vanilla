@@ -2,6 +2,7 @@ import { useState } from "react";
 import type { BaseCardProps } from "../types/card_base.types";
 import { POSTER_BASE_URL } from "../utils/constants.types";
 import { formatRating, formatReleaseDate } from "../utils/movie.utils";
+import { Link } from "react-router";
 export const MovieCard = (Movie: BaseCardProps) => {
   const posterUrl = `${POSTER_BASE_URL}${Movie.poster_path}`;
   const rating = formatRating(Movie.vote_average);
@@ -9,7 +10,10 @@ export const MovieCard = (Movie: BaseCardProps) => {
   const [imageError, setImageError] = useState(false);
 
   return (
-    <div className="group cursor-pointer px-2 w-full max-w-[300px]">
+    <Link
+      to={`/movies/${Movie.id}`}
+      className="group cursor-pointer px-2 w-full max-w-[300px]"
+    >
       {/* Poster Image */}
       <div className="relative mb-4 overflow-hidden rounded-lg bg-secondary aspect-[342/513]">
         {/* Track image load error with state */}
@@ -52,6 +56,6 @@ export const MovieCard = (Movie: BaseCardProps) => {
           {releaseDate}
         </p>
       </div>
-    </div>
+    </Link>
   );
 };
