@@ -1,6 +1,6 @@
 import { useParams } from "react-router";
 import { useFetchMovieDetails } from "./hooks/useFetchMovieDetails";
-import MovieDetailsScreen from "./MovieDetailsScreen";
+import MovieDetailsScreen from "../../components/MovieDetailsScreen";
 
 export default function MovieDetailsPage() {
   // Get the ID from the URL parameters
